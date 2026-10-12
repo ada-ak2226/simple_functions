@@ -1,4 +1,4 @@
-__all__ = ['my_sum']
+__all__ = ['my_sum','factorial']
 
 
 def my_sum(iterable):
@@ -7,3 +7,9 @@ def my_sum(iterable):
     for i in iterable:
         tot += i
     return tot
+
+@cache # Telling python to store the results in this
+def factorial(n):
+    """Return n! (n factorial) for a non-negative integer n."""
+    return n * factorial(n-1) if n else 1
+
